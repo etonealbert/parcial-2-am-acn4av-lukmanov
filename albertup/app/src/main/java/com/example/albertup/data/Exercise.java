@@ -50,7 +50,6 @@ public enum Exercise {
         return nameRes;
     }
 
-    /** Quantity string such as "12 flexiones" / "1 push-up". */
     @PluralsRes
     public int getCountPluralsRes() {
         return countPluralsRes;
@@ -66,7 +65,6 @@ public enum Exercise {
         return illustrationRes;
     }
 
-    /** Above this many reps in a single set the app asks the user to confirm the value. */
     public int getUnusualRepsThreshold() {
         return unusualRepsThreshold;
     }

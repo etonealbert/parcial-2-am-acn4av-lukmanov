@@ -23,11 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Initial Firebase integration: one-way backup of the local sets to Cloud Firestore under
- * users/{uid}/sets/{setUuid}. Restore, delete propagation and automatic sync are pending
- * (see docs/FIREBASE.md).
- */
+/** Saves local sets to users/{uid}/sets in Firestore. */
 public final class CloudBackup {
 
     /** Stay below the documented 500 writes per batch (one extra write for the summary). */
@@ -55,7 +51,6 @@ public final class CloudBackup {
         return false;
     }
 
-    /** Uploads (creates or overwrites) every set; documents use the set UUID as id. */
     public static void backUp(@NonNull FirebaseUser user, @NonNull List<WorkoutSet> sets,
                               @NonNull Listener listener) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -85,7 +80,6 @@ public final class CloudBackup {
                 .addOnFailureListener(listener::onFailure);
     }
 
-    /** Stable ids and Timestamps (java.time is not available on API 24-25 without desugaring). */
     @NonNull
     static Map<String, Object> toDocument(@NonNull WorkoutSet set) {
         Map<String, Object> document = new HashMap<>();

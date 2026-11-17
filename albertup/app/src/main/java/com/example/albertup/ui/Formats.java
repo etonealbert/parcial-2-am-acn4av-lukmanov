@@ -30,7 +30,6 @@ public final class Formats {
         return locale != null ? locale : Locale.getDefault();
     }
 
-    /** "12 flexiones", "1 pull-up"... */
     @NonNull
     public static String exerciseCount(@NonNull Context context, @NonNull Exercise exercise,
                                        int reps) {
@@ -50,19 +49,16 @@ public final class Formats {
                 R.plurals.sets_count, sets, number(context, sets));
     }
 
-    /** Integer with locale grouping, e.g. "1.240" (es) or "1,240" (en). */
     @NonNull
     public static String number(@NonNull Context context, int value) {
         return NumberFormat.getIntegerInstance(locale(context)).format(value);
     }
 
-    /** Whole percentage with locale rules, e.g. "45 %" (es) or "45%" (en). */
     @NonNull
     public static String percent(@NonNull Context context, int percent) {
         return NumberFormat.getPercentInstance(locale(context)).format(percent / 100.0);
     }
 
-    /** Time of day honoring the device 12/24-hour preference. */
     @NonNull
     public static String time(@NonNull Context context, long millis) {
         return format(context, DateFormat.is24HourFormat(context) ? "Hm" : "hma", millis);
@@ -81,7 +77,6 @@ public final class Formats {
                 longDate(context, millis, System.currentTimeMillis()), time(context, millis));
     }
 
-    /** "Hoy", "Ayer" or the long date. */
     @NonNull
     public static String dayLabel(@NonNull Context context, long millis, long now) {
         TimeZone timeZone = TimeZone.getDefault();

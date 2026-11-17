@@ -1,101 +1,42 @@
-# Firebase en AlberTUP: estado actual y pasos pendientes
+# Firebase en AlberTUP
 
-> **Estado:** integración inicial configurada y probada en un proyecto de Firebase y un emulador
-> Android el 17 de noviembre de 2026. La app también funciona sin Firebase. La configuración local
-> `google-services.json` no se incluye en Git y cada instalación debe proporcionar la suya.
+Firebase permite crear una cuenta con correo y contraseña y guardar una copia de las series en la
+nube. Es opcional: la app funciona de forma local si no se configura.
 
-Se verificó la creación de una cuenta temporal mediante el SDK y un respaldo real a Firestore.
-El respaldo se repitió y una lectura desde el servidor confirmó una sola serie y el resumen correcto.
-También se comprobó en la pantalla de la app el mensaje de respaldo completado. Esto no cubre todos
-los casos de error, el modo sin conexión ni la restauración, que aún no está implementada.
+## Configuración
 
-## 1. Qué ya está en el código
+1. Crear un proyecto en [Firebase Console](https://console.firebase.google.com/).
+2. Agregar una app Android con el nombre de paquete `com.example.albertup`.
+3. Descargar `google-services.json` y colocarlo en `albertup/app/`. El archivo está en
+   `.gitignore` y no se sube al repositorio.
+4. En **Authentication → Sign-in method**, habilitar **Email/Password**.
+5. En **Firestore Database**, crear la base en modo producción. La configuración usada para este
+   trabajo eligió `southamerica-east1` (São Paulo). La ubicación no se puede cambiar después.
+6. En **Firestore → Rules**, copiar el contenido de [firestore.rules](../firebase/firestore.rules)
+   y publicarlo.
+7. Abrir `albertup/` en Android Studio, sincronizar Gradle y ejecutar la app. En **Ajustes →
+   Gestionar cuenta** debe aparecer el formulario de inicio de sesión.
 
-| Pieza | Dónde | Detalle |
-|---|---|---|
-| Dependencias | `albertup/gradle/libs.versions.toml`, `albertup/app/build.gradle.kts` | Firebase BoM **35.2.0** (gestiona `firebase-auth` 25.0.0 y `firebase-firestore` 27.2.0, minSdk 24). |
-| Plugin Google Services | `albertup/build.gradle.kts` (declarado con `apply false`) y `albertup/app/build.gradle.kts` | Versión **4.6.0**. Se aplica **solo si existe** `albertup/app/google-services.json`, así el proyecto compila sin el archivo. |
-| Detección segura | `cloud/CloudBackup.isConfigured()` | Verifica que exista la app `[DEFAULT]` antes de llamar a `FirebaseAuth.getInstance()` o `FirebaseFirestore.getInstance()` (que lanzarían `IllegalStateException`). |
-| Autenticación | `AccountActivity` (Ajustes → *Cuenta y respaldo en la nube*) | Crear cuenta, iniciar y cerrar sesión con email y contraseña; validación de formulario y mensajes claros por tipo de error (credenciales, email en uso, contraseña débil, sin conexión, demasiados intentos). |
-| Respaldo a Firestore | `cloud/CloudBackup.backUp()` | Subida **manual y en un solo sentido** de todas las series locales, en lotes de hasta 450 escrituras (límite documentado: 500). El id de cada documento es el UUID de la serie, por lo que repetir el respaldo no duplica datos. |
-| Reglas de seguridad | `firebase/firestore.rules` | Cada usuario solo accede a `users/{su uid}/…`; valida `exerciseId`, `reps` (1–200) y tipos de fecha. |
-| Sin configuración | `AccountActivity` | Muestra una tarjeta que explica que falta `google-services.json` y remite a este documento; el resto de la app no cambia. |
+No hace falta configurar SHA-1 para el inicio de sesión con correo y contraseña. El plugin de
+Google Services se activa cuando existe `google-services.json`.
 
-### Modelo de datos en Firestore
+## Cómo funciona el respaldo
 
-```text
-users/{uid}
-  lastBackupAt : timestamp (del servidor)
-  setCount     : number
-users/{uid}/sets/{uuidDeLaSerie}
-  exerciseId   : "push_up" | "pull_up"   (id estable, nunca el texto traducido)
-  reps         : number (1–200)
-  performedAt  : timestamp (fecha y hora real de la serie)
-  updatedAt    : timestamp (última edición local)
-  backedUpAt   : timestamp (del servidor)
-```
+Después de iniciar sesión, el botón **Respaldar mis series ahora** copia las series locales a
+`users/{uid}/sets` en Firestore. Cada serie usa un identificador propio, por lo que repetir el
+respaldo actualiza los mismos documentos. Las reglas permiten que cada usuario acceda solo a sus
+datos y validan los datos principales de las series.
 
-## 2. Pasos para activarlo (en la otra máquina)
+El respaldo es manual y en un solo sentido. Todavía no hay restauración desde la nube, sincronización
+automática ni propagación de eliminaciones.
 
-1. Entrar a <https://console.firebase.google.com/> y crear un proyecto (Google Analytics es opcional).
-2. **Agregar app → Android** con el *package name* exacto `com.example.albertup`. El SHA-1 **no** es
-   necesario para email y contraseña (sí lo sería para Google Sign-In o teléfono).
-3. Descargar `google-services.json` y copiarlo en **`albertup/app/google-services.json`**.
-   El archivo está en `.gitignore`: no lo subas al repositorio.
-4. **Authentication → Sign-in method → Email/Password → Habilitar → Guardar.**
-5. **Firestore Database → Crear base de datos** en **modo producción**. Elegí una ubicación cercana,
-   por ejemplo `southamerica-east1` (San Pablo); **no se puede cambiar después**.
-6. **Firestore → Reglas**: pegar el contenido de `firebase/firestore.rules` y **Publicar**.
-7. En Android Studio: *Sync Project with Gradle Files* y ejecutar la app (Gradle necesita JDK 17;
-   el que trae Android Studio sirve).
-8. Comprobar en **Ajustes → Cuenta y respaldo en la nube** que el estado diga *"Sin sesión
-   iniciada"* (si dice *"Firebase no está configurado"*, el plugin no encontró el JSON).
+## Pruebas
 
-### Pruebas manuales sugeridas
+El 17 de noviembre de 2026 se creó una cuenta temporal mediante el SDK y se verificó un respaldo
+real desde un emulador. Al repetirlo, una lectura del servidor confirmó que había una sola serie y
+que el resumen era correcto. El [video de respaldo](videos/firebase-backup.mp4) muestra el resultado
+en la app con una sesión ya iniciada.
 
-- [ ] Crear cuenta con un email nuevo → mensaje "Cuenta creada".
-- [ ] Cerrar sesión e iniciar sesión otra vez; probar una contraseña incorrecta.
-- [ ] Intentar crear una cuenta con un email ya usado y con una contraseña de menos de 6 caracteres.
-- [ ] Registrar algunas series, tocar **Respaldar mis series ahora** y verificar en la consola los
-      documentos en `users/{uid}/sets`.
-- [ ] Repetir el respaldo: la cantidad de documentos no debe duplicarse.
-- [ ] Modo avión + respaldo: a los 20 s la app avisa que quedó pendiente; al reconectar se envía.
-- [ ] Con las reglas sin publicar (o erróneas), el respaldo muestra el aviso de reglas de seguridad.
-
-## 3. Lo que falta integrar
-
-1. **Ampliar la verificación de punta a punta** a los casos de error, reglas y modo sin conexión.
-2. **Restaurar desde la nube**: leer `users/{uid}/sets`, convertir `exerciseId` con
-   `Exercise.fromId()` y fusionar por UUID en `WorkoutRepository` (gana el `updatedAt` más reciente).
-3. **Propagar eliminaciones**: al borrar localmente, borrar el documento o guardar una marca
-   `deletedAt` para que otros dispositivos también lo eliminen.
-4. **Sincronización automática** (al guardar/editar/borrar o periódica con WorkManager) y
-   resolución de conflictos entre dispositivos.
-5. **Cuenta completa**: recuperación de contraseña (`sendPasswordResetEmail`), verificación de email y
-   **eliminación de cuenta y datos** (exigida por Google Play si la app permite crear cuentas).
-6. **Google Sign-In** con Credential Manager (requiere registrar SHA-1/SHA-256).
-7. **App Check**, monitoreo de cuotas y pruebas instrumentadas con **Firebase Emulator Suite**.
-8. Textos de privacidad/consentimiento acordes a los datos que se suben.
-
-## 4. Notas de la investigación
-
-- Sin `google-services.json`, `FirebaseInitProvider` **no rompe la app**: registra que la
-  inicialización no se hizo y `FirebaseApp.getApps()` queda vacío. Por eso se comprueba la app
-  `[DEFAULT]` antes de usar las instancias sin argumentos.
-- Firestore guarda las escrituras en una cola local cuando no hay conexión; la tarea de `commit()`
-  termina recién cuando responde el servidor. La pantalla corta la espera a los 20 s y lo informa.
-- La documentación del SDK de Android sigue indicando **500 escrituras por lote**; se usan 450.
-- En API 24–25 no hay `java.time` sin *desugaring*: se usan `com.google.firebase.Timestamp`/`Date`.
-- La compatibilidad del plugin 4.6.0 se probó oficialmente con AGP 8.13.0; con 8.13.2 es inferida.
-
-### Fuentes
-
-- Configuración en Android: <https://firebase.google.com/docs/android/setup>
-- Plugin y archivo `google-services.json`: <https://firebase.google.com/docs/android/google-services-plugin-and-file>
-- Autenticación con contraseña: <https://firebase.google.com/docs/auth/android/password-auth>
-- Inicio rápido de Firestore: <https://firebase.google.com/docs/firestore/quickstart>
-- Ubicaciones de Firestore: <https://firebase.google.com/docs/firestore/locations>
-- Reglas de seguridad: <https://firebase.google.com/docs/firestore/security/rules-structure>
-- BoM de Firebase: <https://firebase.google.com/docs/android/learn-more#bom>
-- Notas de versión de Android: <https://firebase.google.com/support/release-notes/android>
-- `WriteBatch` / límites: <https://firebase.google.com/docs/reference/android/com/google/firebase/firestore/WriteBatch>
+Queda pendiente probar los casos de error y el comportamiento sin conexión. El archivo de
+configuración local no se incluye en el repositorio; para usar Firebase en otra instalación hay que
+agregar uno correspondiente a su proyecto.

@@ -21,12 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Single source of truth for logged sets. Totals and records are always derived from the
- * stored rows, so edits and deletes can never leave stale values behind.
- *
- * <p>Queries are small and indexed, so they run synchronously on the caller's thread.</p>
- */
+/** Stores workout sets and calculates totals and records from them. */
 public final class WorkoutRepository {
 
     private static final String[] SET_COLUMNS = {
@@ -80,7 +75,6 @@ public final class WorkoutRepository {
                 SQLiteDatabase.CONFLICT_REPLACE);
     }
 
-    /** Corrects exercise and reps of an existing set; the original date is kept. */
     public boolean updateSet(long id, @NonNull Exercise exercise, int reps) {
         ContentValues values = new ContentValues();
         values.put(COL_EXERCISE, exercise.getId());
@@ -104,7 +98,6 @@ public final class WorkoutRepository {
         }
     }
 
-    /** Sets performed in [startInclusive, endExclusive), oldest first. */
     @NonNull
     public List<WorkoutSet> getSetsBetween(long startInclusive, long endExclusive) {
         try (Cursor cursor = readable().query(TABLE_SETS, SET_COLUMNS,
@@ -115,7 +108,6 @@ public final class WorkoutRepository {
         }
     }
 
-    /** Every set, newest first, optionally restricted to one exercise. */
     @NonNull
     public List<WorkoutSet> getAllSets(@Nullable Exercise exercise) {
         String selection = exercise == null ? null : COL_EXERCISE + " = ?";
@@ -126,7 +118,6 @@ public final class WorkoutRepository {
         }
     }
 
-    /** Timestamps of every set, used to compute streaks. */
     @NonNull
     public List<Long> getAllPerformedAt() {
         List<Long> timestamps = new ArrayList<>();

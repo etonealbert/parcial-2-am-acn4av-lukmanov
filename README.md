@@ -8,8 +8,7 @@ Proyecto del **Parcial 2** de Aplicaciones Móviles (Escuela Da Vinci).
 
 ## Documentación
 
-- 📄 [Informe del parcial](docs/INFORME.md): propósito, mockups de cada pantalla, flujo de uso,
-  checklist de requisitos, fuentes y escenario de demostración.
+- 📄 [Informe del parcial](docs/INFORME.md): idea, pantallas, navegación, pruebas y fuentes.
 - 🔥 [Firebase](docs/FIREBASE.md): estado de la integración inicial y pasos para activarla.
 
 ## Videos de demostración

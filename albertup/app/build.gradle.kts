@@ -2,8 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
-// Firebase is optional: without app/google-services.json the app still builds and runs, and the
-// account screen explains how to enable it (see docs/FIREBASE.md).
+// Firebase is optional. See docs/FIREBASE.md for setup.
 if (file("google-services.json").exists()) {
     apply(plugin = "com.google.gms.google-services")
 }
@@ -18,8 +17,6 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -38,7 +35,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -51,6 +47,4 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
 }
