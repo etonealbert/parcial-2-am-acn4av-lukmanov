@@ -36,4 +36,43 @@
     <string name="motivation_remaining">%1$d reps to 100! Keep pushing.</string>
     <string name="motivation_done">Goal reached! Amazing work.</string>
     <string name="new_pr_message">New personal best!</string>
+
+    <!-- Common -->
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_discard">Discard</string>
+    <string name="action_keep_editing">Keep editing</string>
+    <string name="action_save_anyway">Save anyway</string>
+    <string name="action_fix">Fix it</string>
+    <string name="day_today">Today</string>
+    <string name="day_yesterday">Yesterday</string>
+
+    <!-- Log workout -->
+    <string name="log_title_new">Log a set</string>
+    <string name="log_title_edit">Edit set</string>
+    <string name="log_question_exercise">Which exercise did you do?</string>
+    <string name="log_card_record">Record: %1$s</string>
+    <string name="log_card_record_none">No record yet</string>
+    <string name="log_reps_title">How many reps?</string>
+    <string name="log_reps_hint">Reps</string>
+    <string name="log_reps_helper">Between %1$d and %2$d</string>
+    <string name="log_quick_picks">Quick picks</string>
+    <string name="log_record_first">First set of this exercise: it will be your record.</string>
+    <string name="log_record_current">Your best set: %1$s. Go beat it!</string>
+    <string name="log_record_beaten">This beats your record of %1$s!</string>
+    <string name="log_save_generic">Save set</string>
+    <string name="log_save_format">Save %1$s</string>
+    <string name="log_save_changes">Save changes</string>
+    <string name="log_delete">Delete set</string>
+    <string name="log_edit_info">Logged: %1$s. Editing keeps the original date.</string>
+    <string name="error_reps_empty">Enter how many reps you did.</string>
+    <string name="error_reps_range">Enter a number between %1$d and %2$d.</string>
+    <string name="error_set_not_found">That set no longer exists.</string>
+    <string name="confirm_unusual_title">Confirm the number?</string>
+    <string name="confirm_unusual_message">Doing %1$s in a single set is unusual. Save it anyway?</string>
+    <string name="confirm_delete_title">Delete this set?</string>
+    <string name="confirm_delete_message">%1$s · %2$s. You can undo it right after.</string>
+    <string name="discard_title">Discard changes?</string>
+    <string name="discard_message">The set will stay as it was.</string>
 </resources>

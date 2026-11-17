@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exercise_push_up_count">
+        <item quantity="one">%d push-up</item>
+        <item quantity="other">%d push-ups</item>
+    </plurals>
+    <plurals name="exercise_pull_up_count">
+        <item quantity="one">%d pull-up</item>
+        <item quantity="other">%d pull-ups</item>
+    </plurals>
+    <plurals name="reps_count">
+        <item quantity="one">%d rep</item>
+        <item quantity="other">%d reps</item>
+    </plurals>
+    <plurals name="sets_count">
+        <item quantity="one">%d set</item>
+        <item quantity="other">%d sets</item>
+    </plurals>
+    <plurals name="quick_pick_desc">
+        <item quantity="one">Use %d rep</item>
+        <item quantity="other">Use %d reps</item>
+    </plurals>
+</resources>

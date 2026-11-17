@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
     <string name="app_name" translatable="false">AlberTUP</string>
     <string name="title_albertup" translatable="false">AlberTUP</string>
     <string name="subtitle_today">Día de empuje y tracción</string>
@@ -40,4 +40,44 @@
     <string name="motivation_done">¡Meta cumplida! Excelente trabajo.</string>
     <string name="pr_empty" translatable="false">—</string>
     <string name="new_pr_message">¡Nuevo récord personal!</string>
+
+    <!-- Common -->
+    <string name="action_back">Volver</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="action_discard">Descartar</string>
+    <string name="action_keep_editing">Seguir editando</string>
+    <string name="action_save_anyway">Guardar igual</string>
+    <string name="action_fix">Corregir</string>
+    <string name="format_date_time" translatable="false">%1$s · %2$s</string>
+    <string name="day_today">Hoy</string>
+    <string name="day_yesterday">Ayer</string>
+
+    <!-- Log workout -->
+    <string name="log_title_new">Registrar serie</string>
+    <string name="log_title_edit">Editar serie</string>
+    <string name="log_question_exercise">¿Qué ejercicio hiciste?</string>
+    <string name="log_card_record">Récord: %1$s</string>
+    <string name="log_card_record_none">Sin récord aún</string>
+    <string name="log_reps_title">¿Cuántas repeticiones?</string>
+    <string name="log_reps_hint">Repeticiones</string>
+    <string name="log_reps_helper">Entre %1$d y %2$d</string>
+    <string name="log_quick_picks">Atajos</string>
+    <string name="log_record_first">Primera serie de este ejercicio: será tu récord.</string>
+    <string name="log_record_current">Tu mejor serie: %1$s. ¡A superarla!</string>
+    <string name="log_record_beaten">¡Esto supera tu récord de %1$s!</string>
+    <string name="log_save_generic">Guardar serie</string>
+    <string name="log_save_format">Guardar %1$s</string>
+    <string name="log_save_changes">Guardar cambios</string>
+    <string name="log_delete">Eliminar serie</string>
+    <string name="log_edit_info">Registrada: %1$s. Al editar se conserva la fecha original.</string>
+    <string name="error_reps_empty">Ingresá cuántas repeticiones hiciste.</string>
+    <string name="error_reps_range">Ingresá un número entre %1$d y %2$d.</string>
+    <string name="error_set_not_found">Esa serie ya no existe.</string>
+    <string name="confirm_unusual_title">¿Confirmás el número?</string>
+    <string name="confirm_unusual_message">Hacer %1$s en una sola serie es muy poco habitual. ¿Lo guardamos igual?</string>
+    <string name="confirm_delete_title">¿Eliminar esta serie?</string>
+    <string name="confirm_delete_message">%1$s · %2$s. Vas a poder deshacerlo justo después.</string>
+    <string name="discard_title">¿Descartar los cambios?</string>
+    <string name="discard_message">La serie va a quedar como estaba.</string>
 </resources>

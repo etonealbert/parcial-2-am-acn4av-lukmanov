@@ -3,6 +3,7 @@ package com.example.albertup.data;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.PluralsRes;
 import androidx.annotation.StringRes;
 
 import com.example.albertup.R;
@@ -12,22 +13,28 @@ import com.example.albertup.R;
  * stored in the database and passed between screens; display names come from resources.
  */
 public enum Exercise {
-    PUSH_UP("push_up", R.string.pushups, R.drawable.ic_pushup, R.drawable.illus_push_up, 100),
-    PULL_UP("pull_up", R.string.pullups, R.drawable.ic_pullup, R.drawable.illus_pull_up, 40);
+    PUSH_UP("push_up", R.string.pushups, R.plurals.exercise_push_up_count,
+            R.drawable.ic_pushup, R.drawable.illus_push_up, 100),
+    PULL_UP("pull_up", R.string.pullups, R.plurals.exercise_pull_up_count,
+            R.drawable.ic_pullup, R.drawable.illus_pull_up, 40);
 
     private final String id;
     @StringRes
     private final int nameRes;
+    @PluralsRes
+    private final int countPluralsRes;
     @DrawableRes
     private final int iconRes;
     @DrawableRes
     private final int illustrationRes;
     private final int unusualRepsThreshold;
 
-    Exercise(String id, @StringRes int nameRes, @DrawableRes int iconRes,
-             @DrawableRes int illustrationRes, int unusualRepsThreshold) {
+    Exercise(String id, @StringRes int nameRes, @PluralsRes int countPluralsRes,
+             @DrawableRes int iconRes, @DrawableRes int illustrationRes,
+             int unusualRepsThreshold) {
         this.id = id;
         this.nameRes = nameRes;
+        this.countPluralsRes = countPluralsRes;
         this.iconRes = iconRes;
         this.illustrationRes = illustrationRes;
         this.unusualRepsThreshold = unusualRepsThreshold;
@@ -41,6 +48,12 @@ public enum Exercise {
     @StringRes
     public int getNameRes() {
         return nameRes;
+    }
+
+    /** Quantity string such as "12 flexiones" / "1 push-up". */
+    @PluralsRes
+    public int getCountPluralsRes() {
+        return countPluralsRes;
     }
 
     @DrawableRes

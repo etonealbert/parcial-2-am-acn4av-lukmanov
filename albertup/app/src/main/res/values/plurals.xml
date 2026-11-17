@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
+    <plurals name="exercise_push_up_count">
+        <item quantity="one">%d flexión</item>
+        <item quantity="many">%d flexiones</item>
+        <item quantity="other">%d flexiones</item>
+    </plurals>
+    <plurals name="exercise_pull_up_count">
+        <item quantity="one">%d dominada</item>
+        <item quantity="many">%d dominadas</item>
+        <item quantity="other">%d dominadas</item>
+    </plurals>
+    <plurals name="reps_count">
+        <item quantity="one">%d rep</item>
+        <item quantity="many">%d reps</item>
+        <item quantity="other">%d reps</item>
+    </plurals>
+    <plurals name="sets_count">
+        <item quantity="one">%d serie</item>
+        <item quantity="many">%d series</item>
+        <item quantity="other">%d series</item>
+    </plurals>
+    <plurals name="quick_pick_desc">
+        <item quantity="one">Cargar %d repetición</item>
+        <item quantity="many">Cargar %d repeticiones</item>
+        <item quantity="other">Cargar %d repeticiones</item>
+    </plurals>
+</resources>

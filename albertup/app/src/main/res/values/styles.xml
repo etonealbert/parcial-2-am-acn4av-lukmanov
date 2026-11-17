@@ -76,6 +76,13 @@
         <item name="android:minHeight">@dimen/touch_target</item>
     </style>
 
+    <style name="Widget.AlberTUP.Button.QuickPick" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minWidth">@dimen/spacing_none</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:paddingStart">@dimen/spacing_none</item>
+        <item name="android:paddingEnd">@dimen/spacing_none</item>
+    </style>
+
     <style name="Widget.AlberTUP.Button.Icon" parent="Widget.Material3.Button.IconButton.Filled.Tonal">
         <item name="android:minWidth">@dimen/touch_target</item>
         <item name="android:minHeight">@dimen/touch_target</item>
