@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <plurals name="exercise_push_up_count">
-        <item quantity="one">%d push-up</item>
-        <item quantity="other">%d push-ups</item>
+        <item quantity="one">%1$s push-up</item>
+        <item quantity="other">%1$s push-ups</item>
     </plurals>
     <plurals name="exercise_pull_up_count">
-        <item quantity="one">%d pull-up</item>
-        <item quantity="other">%d pull-ups</item>
+        <item quantity="one">%1$s pull-up</item>
+        <item quantity="other">%1$s pull-ups</item>
     </plurals>
     <plurals name="reps_count">
-        <item quantity="one">%d rep</item>
-        <item quantity="other">%d reps</item>
+        <item quantity="one">%1$s rep</item>
+        <item quantity="other">%1$s reps</item>
     </plurals>
     <plurals name="sets_count">
-        <item quantity="one">%d set</item>
-        <item quantity="other">%d sets</item>
+        <item quantity="one">%1$s set</item>
+        <item quantity="other">%1$s sets</item>
     </plurals>
     <plurals name="quick_pick_desc">
-        <item quantity="one">Use %d rep</item>
-        <item quantity="other">Use %d reps</item>
+        <item quantity="one">Use %1$s rep</item>
+        <item quantity="other">Use %1$s reps</item>
+    </plurals>
+    <plurals name="streak_days">
+        <item quantity="one">%1$s-day streak</item>
+        <item quantity="other">%1$s-day streak</item>
+    </plurals>
+    <plurals name="motivation_remaining">
+        <item quantity="one">%1$s rep to go! Keep pushing.</item>
+        <item quantity="other">%1$s reps to go! Keep pushing.</item>
     </plurals>
 </resources>

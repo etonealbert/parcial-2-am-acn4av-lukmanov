@@ -212,7 +212,7 @@ public class LogWorkoutActivity extends AppCompatActivity {
             Button button = findViewById(quickPickIds[i]);
             button.setText(Formats.number(this, value));
             button.setContentDescription(getResources().getQuantityString(
-                    R.plurals.quick_pick_desc, value, value));
+                    R.plurals.quick_pick_desc, value, Formats.number(this, value)));
             button.setOnClickListener(v -> setReps(value));
         }
 

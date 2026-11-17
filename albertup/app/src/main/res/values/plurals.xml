@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
     <plurals name="exercise_push_up_count">
-        <item quantity="one">%d flexión</item>
-        <item quantity="many">%d flexiones</item>
-        <item quantity="other">%d flexiones</item>
+        <item quantity="one">%1$s flexión</item>
+        <item quantity="many">%1$s flexiones</item>
+        <item quantity="other">%1$s flexiones</item>
     </plurals>
     <plurals name="exercise_pull_up_count">
-        <item quantity="one">%d dominada</item>
-        <item quantity="many">%d dominadas</item>
-        <item quantity="other">%d dominadas</item>
+        <item quantity="one">%1$s dominada</item>
+        <item quantity="many">%1$s dominadas</item>
+        <item quantity="other">%1$s dominadas</item>
     </plurals>
     <plurals name="reps_count">
-        <item quantity="one">%d rep</item>
-        <item quantity="many">%d reps</item>
-        <item quantity="other">%d reps</item>
+        <item quantity="one">%1$s rep</item>
+        <item quantity="many">%1$s reps</item>
+        <item quantity="other">%1$s reps</item>
     </plurals>
     <plurals name="sets_count">
-        <item quantity="one">%d serie</item>
-        <item quantity="many">%d series</item>
-        <item quantity="other">%d series</item>
+        <item quantity="one">%1$s serie</item>
+        <item quantity="many">%1$s series</item>
+        <item quantity="other">%1$s series</item>
     </plurals>
     <plurals name="quick_pick_desc">
-        <item quantity="one">Cargar %d repetición</item>
-        <item quantity="many">Cargar %d repeticiones</item>
-        <item quantity="other">Cargar %d repeticiones</item>
+        <item quantity="one">Cargar %1$s repetición</item>
+        <item quantity="many">Cargar %1$s repeticiones</item>
+        <item quantity="other">Cargar %1$s repeticiones</item>
+    </plurals>
+    <plurals name="streak_days">
+        <item quantity="one">Racha de %1$s día</item>
+        <item quantity="many">Racha de %1$s días</item>
+        <item quantity="other">Racha de %1$s días</item>
+    </plurals>
+    <plurals name="motivation_remaining">
+        <item quantity="one">¡Falta %1$s rep para tu meta! Seguí así.</item>
+        <item quantity="many">¡Faltan %1$s reps para tu meta! Seguí así.</item>
+        <item quantity="other">¡Faltan %1$s reps para tu meta! Seguí así.</item>
     </plurals>
 </resources>

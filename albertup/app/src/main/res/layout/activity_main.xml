@@ -12,11 +12,13 @@
         android:id="@+id/scrollMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/fab_clearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/content_max_width">
 
         <LinearLayout
             android:id="@+id/columnMain"
@@ -25,6 +27,7 @@
             android:orientation="vertical"
             android:padding="@dimen/screen_padding">
 
+            <!-- Header -->
             <LinearLayout
                 android:id="@+id/headerRow"
                 android:layout_width="match_parent"
@@ -34,14 +37,13 @@
 
                 <ImageView
                     android:id="@+id/ivLogo"
-                    android:layout_width="@dimen/icon_size_small"
-                    android:layout_height="@dimen/icon_size_small"
-                    android:layout_marginEnd="@dimen/spacing_small"
+                    android:layout_width="@dimen/icon_size_medium"
+                    android:layout_height="@dimen/icon_size_medium"
+                    android:layout_marginEnd="@dimen/spacing_medium"
                     android:contentDescription="@string/desc_logo"
-                    android:src="@drawable/ic_pushup" />
+                    android:src="@drawable/ic_brand_mark" />
 
                 <LinearLayout
-                    android:id="@+id/headerText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -49,78 +51,76 @@
 
                     <TextView
                         android:id="@+id/tvAppTitle"
+                        style="@style/Widget.AlberTUP.Text.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/title_albertup"
-                        android:textColor="@color/text_primary"
-                        android:textSize="@dimen/section_title_size"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvSubtitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/subtitle_today"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="@dimen/body_text_size" />
+                        android:text="@string/title_albertup" />
 
                     <TextView
                         android:id="@+id/tvDate"
+                        style="@style/Widget.AlberTUP.Text.Secondary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/date_label"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="@dimen/body_text_size" />
+                        tools:text="Martes, 17 de noviembre" />
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvStreak"
+                <Button
+                    android:id="@+id/btnHistory"
+                    style="@style/Widget.AlberTUP.Button.IconPlain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/accent_container"
-                    android:padding="@dimen/spacing_small"
-                    android:text="@string/streak_3day"
-                    android:textColor="@color/text_primary"
-                    android:textSize="@dimen/body_text_size" />
+                    android:contentDescription="@string/history_title"
+                    app:icon="@drawable/ic_history"
+                    app:iconTint="@color/text_primary" />
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/tvStreak"
+                style="@style/Widget.AlberTUP.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:background="@drawable/bg_pill"
+                android:drawablePadding="@dimen/spacing_small"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/stepper_button_size"
+                android:paddingStart="@dimen/spacing_medium"
+                android:paddingEnd="@dimen/spacing_large"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_flame"
+                app:drawableTint="@color/accent_volt"
+                tools:text="Racha de 3 días" />
+
+            <!-- Today -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardToday"
+                style="@style/Widget.AlberTUP.Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_large"
-                app:cardBackgroundColor="@color/surface_card"
-                app:cardCornerRadius="@dimen/card_radius"
-                app:contentPadding="@dimen/card_padding"
-                app:strokeColor="@color/divider"
-                app:strokeWidth="@dimen/card_stroke">
+                android:layout_marginTop="@dimen/spacing_large">
 
                 <LinearLayout
-                    android:id="@+id/todayColumn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvTodayTitle"
+                        style="@style/Widget.AlberTUP.Text.SectionTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/today_title"
-                        android:textColor="@color/text_primary"
-                        android:textSize="@dimen/section_title_size"
-                        android:textStyle="bold" />
+                        android:text="@string/today_title" />
 
                     <LinearLayout
                         android:id="@+id/statsRow"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_small"
+                        android:baselineAligned="false"
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:id="@+id/statReps"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -128,25 +128,20 @@
 
                             <TextView
                                 android:id="@+id/tvTodayRepsValue"
+                                style="@style/Widget.AlberTUP.Text.StatNumber"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/today_reps_value"
-                                android:textColor="@color/text_primary"
-                                android:textSize="@dimen/stat_number_size"
-                                android:textStyle="bold" />
+                                tools:text="45" />
 
                             <TextView
-                                android:id="@+id/tvTodayRepsLabel"
+                                style="@style/Widget.AlberTUP.Text.Caption"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/today_reps_label"
-                                android:textColor="@color/text_secondary"
-                                android:textSize="@dimen/stat_label_size" />
+                                android:text="@string/today_reps_label" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/statSets"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -154,60 +149,233 @@
 
                             <TextView
                                 android:id="@+id/tvTodaySetsValue"
+                                style="@style/Widget.AlberTUP.Text.StatNumber"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/today_sets_value"
-                                android:textColor="@color/text_primary"
-                                android:textSize="@dimen/stat_number_size"
-                                android:textStyle="bold" />
+                                tools:text="3" />
 
                             <TextView
-                                android:id="@+id/tvTodaySetsLabel"
+                                style="@style/Widget.AlberTUP.Text.Caption"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/today_sets_label"
-                                android:textColor="@color/text_secondary"
-                                android:textSize="@dimen/stat_label_size" />
+                                android:text="@string/today_sets_label" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvGoalPercent"
+                                style="@style/Widget.AlberTUP.Text.StatNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="45 %" />
+
+                            <TextView
+                                style="@style/Widget.AlberTUP.Text.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/today_goal_label" />
 
                         </LinearLayout>
 
                     </LinearLayout>
 
-                    <ProgressBar
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
                         android:id="@+id/progressDaily"
-                        style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/progress_height"
-                        android:layout_marginTop="@dimen/spacing_small"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
                         android:max="100"
-                        android:progress="42"
-                        android:progressTint="@color/accent_volt" />
+                        app:indicatorColor="@color/accent_volt"
+                        app:trackColor="@color/divider"
+                        app:trackCornerRadius="@dimen/progress_corner"
+                        app:trackThickness="@dimen/progress_height" />
 
                     <TextView
                         android:id="@+id/tvDailyGoal"
+                        style="@style/Widget.AlberTUP.Text.Secondary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_small"
-                        android:text="@string/daily_goal_text"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="@dimen/body_text_size" />
+                        tools:text="45 de 100 reps" />
+
+                    <TextView
+                        android:id="@+id/tvMotivation"
+                        style="@style/Widget.AlberTUP.Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xsmall"
+                        android:accessibilityLiveRegion="polite"
+                        android:textStyle="bold"
+                        tools:text="¡Faltan 55 reps para tu meta! Seguí así." />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Exercises -->
             <TextView
-                android:id="@+id/tvChooseExercise"
+                style="@style/Widget.AlberTUP.Text.SectionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_large"
-                android:text="@string/choose_exercise"
-                android:textColor="@color/text_primary"
-                android:textSize="@dimen/section_title_size"
-                android:textStyle="bold" />
+                android:layout_marginTop="@dimen/spacing_xlarge"
+                android:text="@string/section_exercises" />
 
             <LinearLayout
-                android:id="@+id/selectorRow"
+                android:id="@+id/exerciseCardsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPushUp"
+                    style="@style/Widget.AlberTUP.Card"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/spacing_small"
+                    android:layout_weight="1"
+                    app:contentPadding="@dimen/spacing_medium">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/card_illustration_height"
+                            android:importantForAccessibility="no"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/illus_push_up" />
+
+                        <TextView
+                            style="@style/Widget.AlberTUP.Text.BodyLarge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:text="@string/pushups"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvPushUpStats"
+                            style="@style/Widget.AlberTUP.Text.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Hoy: 30 · Récord: 25" />
+
+                        <Button
+                            android:id="@+id/btnLogPushUp"
+                            style="@style/Widget.AlberTUP.Button.Tonal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:text="@string/action_log"
+                            app:icon="@drawable/ic_add" />
+
+                        <Button
+                            android:id="@+id/btnGuidePushUp"
+                            style="@style/Widget.AlberTUP.Button.Text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/action_view_guide"
+                            app:icon="@drawable/ic_menu_book" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPullUp"
+                    style="@style/Widget.AlberTUP.Card"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:contentPadding="@dimen/spacing_medium">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/card_illustration_height"
+                            android:importantForAccessibility="no"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/illus_pull_up" />
+
+                        <TextView
+                            style="@style/Widget.AlberTUP.Text.BodyLarge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:text="@string/pullups"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvPullUpStats"
+                            style="@style/Widget.AlberTUP.Text.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Hoy: 12 · Récord: 10" />
+
+                        <Button
+                            android:id="@+id/btnLogPullUp"
+                            style="@style/Widget.AlberTUP.Button.Tonal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:text="@string/action_log"
+                            app:icon="@drawable/ic_add" />
+
+                        <Button
+                            android:id="@+id/btnGuidePullUp"
+                            style="@style/Widget.AlberTUP.Button.Text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/action_view_guide"
+                            app:icon="@drawable/ic_menu_book" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Today's sets -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xlarge"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTodaysSetsTitle"
+                    style="@style/Widget.AlberTUP.Text.SectionTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="Series de hoy (3)" />
+
+                <Button
+                    android:id="@+id/btnViewHistory"
+                    style="@style/Widget.AlberTUP.Button.Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_view_history" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/emptyToday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_small"
@@ -215,233 +383,113 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/ivPush"
-                    android:layout_width="@dimen/icon_size_small"
-                    android:layout_height="@dimen/icon_size_small"
-                    android:layout_marginEnd="@dimen/spacing_small"
-                    android:contentDescription="@string/desc_push"
-                    android:src="@drawable/ic_pushup" />
+                    android:layout_width="@dimen/empty_image_size"
+                    android:layout_height="@dimen/empty_image_size"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/img_empty_sets" />
 
-                <Button
-                    android:id="@+id/btnPushups"
+                <TextView
+                    style="@style/Widget.AlberTUP.Text.Secondary"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/stepper_button_size"
-                    android:layout_marginEnd="@dimen/spacing_small"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_large"
                     android:layout_weight="1"
-                    android:text="@string/pushups"
-                    android:textSize="@dimen/body_text_size" />
-
-                <ImageView
-                    android:id="@+id/ivPull"
-                    android:layout_width="@dimen/icon_size_small"
-                    android:layout_height="@dimen/icon_size_small"
-                    android:layout_marginEnd="@dimen/spacing_small"
-                    android:contentDescription="@string/desc_pull"
-                    android:src="@drawable/ic_pullup" />
-
-                <Button
-                    android:id="@+id/btnPullups"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/stepper_button_size"
-                    android:layout_weight="1"
-                    android:text="@string/pullups"
-                    android:textSize="@dimen/body_text_size" />
+                    android:text="@string/today_empty" />
 
             </LinearLayout>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardLogger"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_large"
-                app:cardBackgroundColor="@color/surface_card"
-                app:cardCornerRadius="@dimen/card_radius"
-                app:contentPadding="@dimen/card_padding"
-                app:strokeColor="@color/divider"
-                app:strokeWidth="@dimen/card_stroke">
-
-                <LinearLayout
-                    android:id="@+id/loggerColumn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvRepsLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/reps_label"
-                        android:textColor="@color/text_primary"
-                        android:textSize="@dimen/section_title_size"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:id="@+id/stepperRow"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacing_small"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/btnMinus"
-                            android:layout_width="@dimen/stepper_button_size"
-                            android:layout_height="@dimen/stepper_button_size"
-                            android:contentDescription="@string/decrease_desc"
-                            app:icon="@drawable/ic_minus"
-                            app:iconSize="@dimen/icon_size_small"
-                            app:iconPadding="@dimen/spacing_none"
-                            app:iconTint="@color/on_accent_volt" />
-
-                        <TextView
-                            android:id="@+id/tvRepCount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/spacing_medium"
-                            android:layout_marginEnd="@dimen/spacing_medium"
-                            android:text="@string/rep_count_12"
-                            android:textColor="@color/text_primary"
-                            android:textSize="@dimen/stepper_number_size"
-                            android:textStyle="bold" />
-
-                        <Button
-                            android:id="@+id/btnPlus"
-                            android:layout_width="@dimen/stepper_button_size"
-                            android:layout_height="@dimen/stepper_button_size"
-                            android:contentDescription="@string/increase_desc"
-                            app:icon="@drawable/ic_plus"
-                            app:iconSize="@dimen/icon_size_small"
-                            app:iconPadding="@dimen/spacing_none"
-                            app:iconTint="@color/on_accent_volt" />
-
-                    </LinearLayout>
-
-                    <Button
-                        android:id="@+id/btnLog"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/button_height"
-                        android:layout_marginTop="@dimen/spacing_medium"
-                        android:text="@string/log_button"
-                        android:textSize="@dimen/button_text_size" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <TextView
-                android:id="@+id/tvTodaysSetsTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_large"
-                android:text="@string/todays_sets_title"
-                android:textColor="@color/text_primary"
-                android:textSize="@dimen/section_title_size"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/ivEmpty"
-                android:layout_width="@dimen/empty_image_size"
-                android:layout_height="@dimen/empty_image_size"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:contentDescription="@string/desc_empty"
-                android:src="@drawable/img_empty_sets" />
 
             <LinearLayout
                 android:id="@+id/setsList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:orientation="vertical">
-            </LinearLayout>
+                android:orientation="vertical" />
 
+            <!-- Records -->
             <TextView
-                android:id="@+id/tvPrTitle"
+                style="@style/Widget.AlberTUP.Text.SectionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_large"
-                android:text="@string/pr_title"
-                android:textColor="@color/text_primary"
-                android:textSize="@dimen/section_title_size"
-                android:textStyle="bold" />
+                android:layout_marginTop="@dimen/spacing_xlarge"
+                android:text="@string/pr_title" />
 
             <LinearLayout
                 android:id="@+id/prRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_small"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.AlberTUP.Card"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginEnd="@dimen/spacing_small"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/surface_card"
-                    app:cardCornerRadius="@dimen/card_radius"
-                    app:contentPadding="@dimen/card_padding"
-                    app:strokeColor="@color/divider"
-                    app:strokeWidth="@dimen/card_stroke">
+                    android:layout_weight="1">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/tvPrPushLabel"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/pr_pushups_label"
-                            android:textColor="@color/text_secondary"
-                            android:textSize="@dimen/body_text_size" />
+                        <ImageView
+                            android:layout_width="@dimen/icon_size_small"
+                            android:layout_height="@dimen/icon_size_small"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_trophy"
+                            app:tint="@color/accent_volt" />
 
                         <TextView
-                            android:id="@+id/tvPrPushValue"
+                            style="@style/Widget.AlberTUP.Text.Secondary"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_small"
-                            android:text="@string/pr_pushups_value"
-                            android:textColor="@color/text_primary"
-                            android:textSize="@dimen/section_title_size"
-                            android:textStyle="bold" />
+                            android:text="@string/pr_pushups_label" />
+
+                        <TextView
+                            android:id="@+id/tvPrPushValue"
+                            style="@style/Widget.AlberTUP.Text.SectionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xsmall"
+                            tools:text="25 reps" />
 
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.AlberTUP.Card"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/surface_card"
-                    app:cardCornerRadius="@dimen/card_radius"
-                    app:contentPadding="@dimen/card_padding"
-                    app:strokeColor="@color/divider"
-                    app:strokeWidth="@dimen/card_stroke">
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/tvPrPullLabel"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/pr_pullups_label"
-                            android:textColor="@color/text_secondary"
-                            android:textSize="@dimen/body_text_size" />
+                        <ImageView
+                            android:layout_width="@dimen/icon_size_small"
+                            android:layout_height="@dimen/icon_size_small"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_trophy"
+                            app:tint="@color/accent_volt" />
 
                         <TextView
-                            android:id="@+id/tvPrPullValue"
+                            style="@style/Widget.AlberTUP.Text.Secondary"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_small"
-                            android:text="@string/pr_pullups_value"
-                            android:textColor="@color/text_primary"
-                            android:textSize="@dimen/section_title_size"
-                            android:textStyle="bold" />
+                            android:text="@string/pr_pullups_label" />
+
+                        <TextView
+                            android:id="@+id/tvPrPullValue"
+                            style="@style/Widget.AlberTUP.Text.SectionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xsmall"
+                            tools:text="12 reps" />
 
                     </LinearLayout>
 
@@ -450,12 +498,10 @@
             </LinearLayout>
 
             <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.AlberTUP.Card.Accent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_small"
-                app:cardBackgroundColor="@color/accent_container"
-                app:cardCornerRadius="@dimen/card_radius"
-                app:contentPadding="@dimen/card_padding">
+                android:layout_marginTop="@dimen/spacing_small">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -463,40 +509,51 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvPrTotalLabel"
+                        style="@style/Widget.AlberTUP.Text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/pr_total_label"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="@dimen/body_text_size" />
+                        android:text="@string/pr_total_label" />
 
                     <TextView
                         android:id="@+id/tvPrTotalValue"
+                        style="@style/Widget.AlberTUP.Text.StatNumber"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacing_small"
-                        android:text="@string/pr_total_value"
-                        android:textColor="@color/text_primary"
-                        android:textSize="@dimen/section_title_size"
-                        android:textStyle="bold" />
+                        tools:text="1.240 reps" />
+
+                    <TextView
+                        android:id="@+id/tvPrTotalSets"
+                        style="@style/Widget.AlberTUP.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="en 64 series" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/tvMotivation"
+                android:id="@+id/tvLocalDataNote"
+                style="@style/Widget.AlberTUP.Text.Caption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_large"
-                android:layout_marginBottom="@dimen/spacing_xlarge"
+                android:layout_marginTop="@dimen/spacing_xlarge"
                 android:gravity="center"
-                android:text="@string/motivation_text"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/body_text_size" />
+                android:text="@string/local_data_note" />
 
         </LinearLayout>
 
     </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabLog"
+        style="@style/Widget.AlberTUP.Fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_large"
+        android:text="@string/action_log_set"
+        app:icon="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

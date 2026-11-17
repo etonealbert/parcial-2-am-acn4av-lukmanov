@@ -1,41 +1,34 @@
 <resources>
-    <string name="subtitle_today">Push / Pull Day</string>
-    <string name="date_label">Sun, 13 Sep</string>
-    <string name="streak_3day">3-day streak</string>
-    <string name="today_title">Today</string>
-    <string name="today_reps_value">0</string>
-    <string name="today_reps_label">Reps</string>
-    <string name="today_sets_value">0</string>
-    <string name="today_sets_label">Sets</string>
-    <string name="daily_goal_text">Daily goal: 0 / 100 reps</string>
-    <string name="choose_exercise">Choose exercise</string>
     <string name="pushups">Push-ups</string>
     <string name="pullups">Pull-ups</string>
-    <string name="reps_label">Reps this set</string>
-    <string name="decrease_desc">Decrease reps</string>
-    <string name="increase_desc">Increase reps</string>
-    <string name="log_button">Log 12 push-ups</string>
-    <string name="todays_sets_title">Today\'s sets (0)</string>
-    <string name="pr_title">Personal records</string>
-    <string name="pr_pushups_label">Best Push-ups</string>
-    <string name="pr_pushups_value">—</string>
-    <string name="pr_pullups_label">Best Pull-ups</string>
-    <string name="pr_pullups_value">—</string>
-    <string name="pr_total_label">All-time total</string>
-    <string name="pr_total_value">0 reps</string>
-    <string name="motivation_text">100 reps to go! Keep pushing.</string>
+    <string name="decrease_desc">Remove one rep</string>
+    <string name="increase_desc">Add one rep</string>
+
+    <!-- Dashboard -->
     <string name="desc_logo">AlberTUP logo</string>
-    <string name="desc_push">Push-ups icon</string>
-    <string name="desc_pull">Pull-ups icon</string>
-    <string name="desc_empty">Workout illustration</string>
-    <string name="log_button_format">Log %1$d %2$s</string>
-    <string name="set_row_format">Set %1$d • %2$s • %3$d reps</string>
-    <string name="todays_sets_format">Today\'s sets (%1$d)</string>
-    <string name="daily_goal_format">Daily goal: %1$d / 100 reps</string>
-    <string name="pr_value_format">%1$d reps</string>
-    <string name="motivation_remaining">%1$d reps to 100! Keep pushing.</string>
+    <string name="streak_none">Start your streak today</string>
+    <string name="today_title">Today</string>
+    <string name="today_reps_label">Reps</string>
+    <string name="today_sets_label">Sets</string>
+    <string name="today_goal_label">Of goal</string>
+    <string name="daily_goal_progress">%1$s of %2$s reps</string>
+    <string name="goal_progress_desc">Daily goal progress: %1$s</string>
+    <string name="motivation_start">Today\'s goal: %1$s. Start with a set!</string>
     <string name="motivation_done">Goal reached! Amazing work.</string>
-    <string name="new_pr_message">New personal best!</string>
+    <string name="section_exercises">Your exercises</string>
+    <string name="exercise_card_stats">Today: %1$s · Record: %2$s</string>
+    <string name="action_view_guide">View guide</string>
+    <string name="action_view_history">View history</string>
+    <string name="action_log_set">Log set</string>
+    <string name="todays_sets_format">Today\'s sets (%1$d)</string>
+    <string name="today_empty">No sets logged today yet. Start with the first one!</string>
+    <string name="today_set_row">Set %1$d · %2$s</string>
+    <string name="pr_title">Personal records</string>
+    <string name="pr_pushups_label">Best push-up set</string>
+    <string name="pr_pullups_label">Best pull-up set</string>
+    <string name="pr_total_label">All-time total</string>
+    <string name="pr_total_sets">across %1$s</string>
+    <string name="local_data_note">Your sets are stored on this device and stay there even if you close the app.</string>
 
     <!-- Common -->
     <string name="action_back">Back</string>

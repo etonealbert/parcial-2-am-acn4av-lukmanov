@@ -1,45 +1,37 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
     <string name="app_name" translatable="false">AlberTUP</string>
     <string name="title_albertup" translatable="false">AlberTUP</string>
-    <string name="subtitle_today">Día de empuje y tracción</string>
-    <string name="date_label">dom, 13 sep</string>
-    <string name="streak_3day">Racha de 3 días</string>
-    <string name="today_title">Hoy</string>
-    <string name="today_reps_value">0</string>
-    <string name="today_reps_label">Repeticiones</string>
-    <string name="today_sets_value">0</string>
-    <string name="today_sets_label">Series</string>
-    <string name="daily_goal_text">Meta diaria: 0 / 100 reps</string>
-    <string name="choose_exercise">Elegí el ejercicio</string>
     <string name="pushups">Flexiones</string>
     <string name="pullups">Dominadas</string>
-    <string name="reps_label">Repeticiones de esta serie</string>
-    <string name="rep_count_12" translatable="false">12</string>
     <string name="decrease_desc">Restar una repetición</string>
     <string name="increase_desc">Sumar una repetición</string>
-    <string name="log_button">Registrar 12 flexiones</string>
-    <string name="todays_sets_title">Series de hoy (0)</string>
+    <string name="pr_empty" translatable="false">—</string>
+
+    <!-- Dashboard -->
+    <string name="desc_logo">Logo de AlberTUP</string>
+    <string name="streak_none">Empezá tu racha hoy</string>
+    <string name="today_title">Hoy</string>
+    <string name="today_reps_label">Repeticiones</string>
+    <string name="today_sets_label">Series</string>
+    <string name="today_goal_label">De la meta</string>
+    <string name="daily_goal_progress">%1$s de %2$s reps</string>
+    <string name="goal_progress_desc">Progreso de la meta diaria: %1$s</string>
+    <string name="motivation_start">Tu meta de hoy: %1$s. ¡Arrancá con una serie!</string>
+    <string name="motivation_done">¡Meta cumplida! Excelente trabajo.</string>
+    <string name="section_exercises">Tus ejercicios</string>
+    <string name="exercise_card_stats">Hoy: %1$s · Récord: %2$s</string>
+    <string name="action_view_guide">Ver guía</string>
+    <string name="action_view_history">Ver historial</string>
+    <string name="action_log_set">Registrar serie</string>
+    <string name="todays_sets_format">Series de hoy (%1$d)</string>
+    <string name="today_empty">Todavía no registraste series hoy. ¡Arrancá con la primera!</string>
+    <string name="today_set_row">Serie %1$d · %2$s</string>
     <string name="pr_title">Récords personales</string>
     <string name="pr_pushups_label">Mejor serie de flexiones</string>
-    <string name="pr_pushups_value">—</string>
     <string name="pr_pullups_label">Mejor serie de dominadas</string>
-    <string name="pr_pullups_value">—</string>
     <string name="pr_total_label">Total histórico</string>
-    <string name="pr_total_value">0 reps</string>
-    <string name="motivation_text">¡Faltan 100 reps para la meta! Seguí así.</string>
-    <string name="desc_logo">Logo de AlberTUP</string>
-    <string name="desc_push">Ícono de flexiones</string>
-    <string name="desc_pull">Ícono de dominadas</string>
-    <string name="desc_empty">Ilustración de entrenamiento</string>
-    <string name="log_button_format">Registrar %1$d · %2$s</string>
-    <string name="set_row_format">Serie %1$d • %2$s • %3$d reps</string>
-    <string name="todays_sets_format">Series de hoy (%1$d)</string>
-    <string name="daily_goal_format">Meta diaria: %1$d / 100 reps</string>
-    <string name="pr_value_format">%1$d reps</string>
-    <string name="motivation_remaining">¡Faltan %1$d reps para 100! Seguí así.</string>
-    <string name="motivation_done">¡Meta cumplida! Excelente trabajo.</string>
-    <string name="pr_empty" translatable="false">—</string>
-    <string name="new_pr_message">¡Nuevo récord personal!</string>
+    <string name="pr_total_sets">en %1$s</string>
+    <string name="local_data_note">Tus series se guardan en este dispositivo y siguen ahí aunque cierres la app.</string>
 
     <!-- Common -->
     <string name="action_back">Volver</string>

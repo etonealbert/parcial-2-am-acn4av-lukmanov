@@ -37,6 +37,8 @@
     <dimen name="stepper_button_size">48dp</dimen>
     <dimen name="touch_target">48dp</dimen>
     <dimen name="progress_height">8dp</dimen>
+    <dimen name="progress_corner">4dp</dimen>
+    <dimen name="pill_radius">24dp</dimen>
     <dimen name="step_number_size">28dp</dimen>
 
     <!-- Icons and images -->

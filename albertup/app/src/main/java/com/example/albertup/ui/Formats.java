@@ -35,23 +35,31 @@ public final class Formats {
     public static String exerciseCount(@NonNull Context context, @NonNull Exercise exercise,
                                        int reps) {
         return context.getResources().getQuantityString(
-                exercise.getCountPluralsRes(), reps, reps);
+                exercise.getCountPluralsRes(), reps, number(context, reps));
     }
 
     @NonNull
     public static String reps(@NonNull Context context, int reps) {
-        return context.getResources().getQuantityString(R.plurals.reps_count, reps, reps);
+        return context.getResources().getQuantityString(
+                R.plurals.reps_count, reps, number(context, reps));
     }
 
     @NonNull
     public static String sets(@NonNull Context context, int sets) {
-        return context.getResources().getQuantityString(R.plurals.sets_count, sets, sets);
+        return context.getResources().getQuantityString(
+                R.plurals.sets_count, sets, number(context, sets));
     }
 
     /** Integer with locale grouping, e.g. "1.240" (es) or "1,240" (en). */
     @NonNull
     public static String number(@NonNull Context context, int value) {
         return NumberFormat.getIntegerInstance(locale(context)).format(value);
+    }
+
+    /** Whole percentage with locale rules, e.g. "45 %" (es) or "45%" (en). */
+    @NonNull
+    public static String percent(@NonNull Context context, int percent) {
+        return NumberFormat.getPercentInstance(locale(context)).format(percent / 100.0);
     }
 
     /** Time of day honoring the device 12/24-hour preference. */
