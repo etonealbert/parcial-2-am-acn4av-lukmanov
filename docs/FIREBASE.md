@@ -1,8 +1,13 @@
 # Firebase en AlberTUP: estado actual y pasos pendientes
 
-> **Estado:** implementación **inicial**, escrita y revisada estáticamente pero **no ejecutada ni
-> verificada**. No se creó ningún proyecto de Firebase, no se compiló la app y no se probó contra
-> los servidores de Google. La app funciona completa **sin** Firebase.
+> **Estado:** integración inicial configurada y probada en un proyecto de Firebase y un emulador
+> Android el 17 de noviembre de 2026. La app también funciona sin Firebase. La configuración local
+> `google-services.json` no se incluye en Git y cada instalación debe proporcionar la suya.
+
+Se verificó la creación de una cuenta temporal mediante el SDK y un respaldo real a Firestore.
+El respaldo se repitió y una lectura desde el servidor confirmó una sola serie y el resumen correcto.
+También se comprobó en la pantalla de la app el mensaje de respaldo completado. Esto no cubre todos
+los casos de error, el modo sin conexión ni la restauración, que aún no está implementada.
 
 ## 1. Qué ya está en el código
 
@@ -59,7 +64,7 @@ users/{uid}/sets/{uuidDeLaSerie}
 
 ## 3. Lo que falta integrar
 
-1. **Verificación de punta a punta** de todo lo anterior (nada se ejecutó todavía).
+1. **Ampliar la verificación de punta a punta** a los casos de error, reglas y modo sin conexión.
 2. **Restaurar desde la nube**: leer `users/{uid}/sets`, convertir `exerciseId` con
    `Exercise.fromId()` y fusionar por UUID en `WorkoutRepository` (gana el `updatedAt` más reciente).
 3. **Propagar eliminaciones**: al borrar localmente, borrar el documento o guardar una marca
