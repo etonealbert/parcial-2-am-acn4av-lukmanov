@@ -121,4 +121,24 @@
     <string name="settings_data_hint">Sets are stored in a local database (SQLite) on this device, with date and time, to compute your totals and records.</string>
     <string name="settings_credits">Credits</string>
     <string name="settings_credits_text">Icons: Google Material Icons (Apache License 2.0). Illustrations and logo: made for AlberTUP.</string>
+
+    <!-- Online content (Wikipedia / Wikimedia Commons) -->
+    <string name="wiki_language">en</string>
+    <string name="wiki_title_push_up">Push-up</string>
+    <string name="wiki_title_pull_up">Pull-up</string>
+    <string name="online_title">From Wikipedia</string>
+    <string name="online_loading">Loading online information…</string>
+    <string name="online_empty">No online information was found for this exercise.</string>
+    <string name="online_error_offline">You\'re offline. Check your connection and try again.</string>
+    <string name="online_error_rate_limited">Wikipedia received too many requests. Try again in a while.</string>
+    <string name="online_error_server">We couldn\'t load the online information. Try again.</string>
+    <string name="online_cached_note">Offline: showing the copy saved on %1$s.</string>
+    <string name="online_text_credit">Text: “%1$s”, Wikipedia contributors, CC BY-SA 4.0 (excerpt).</string>
+    <string name="online_photo_credit">Photo: %1$s · %2$s, via Wikimedia Commons.</string>
+    <string name="online_photo_credit_unknown">Photo via Wikimedia Commons (see author and license).</string>
+    <string name="online_photo_desc">Exercise photo published on Wikimedia Commons</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_read_article">Read the full article</string>
+    <string name="action_photo_license">See photo author and license</string>
+    <string name="error_no_browser">No app available to open links.</string>
 </resources>

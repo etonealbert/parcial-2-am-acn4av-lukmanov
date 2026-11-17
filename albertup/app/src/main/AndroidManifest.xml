@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Wikipedia content and Wikimedia Commons photos in the exercise guide. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".AlberTupApplication"
         android:allowBackup="true"

@@ -128,4 +128,26 @@
     <string name="settings_data_hint">Las series se guardan en una base de datos local (SQLite) en este dispositivo, con fecha y hora, para calcular tus totales y récords.</string>
     <string name="settings_credits">Créditos</string>
     <string name="settings_credits_text">Íconos: Material Icons de Google (licencia Apache 2.0). Ilustraciones y logo: creados para AlberTUP.</string>
+
+    <!-- Online content (Wikipedia / Wikimedia Commons) -->
+    <string name="wiki_language">es</string>
+    <string name="wiki_title_push_up">Flexión de codos</string>
+    <string name="wiki_title_pull_up">Dominada</string>
+    <string name="wiki_file_push_up" translatable="false">File:Push-up session.jpg</string>
+    <string name="wiki_file_pull_up" translatable="false">File:Marine Pull-ups.jpg</string>
+    <string name="online_title">Desde Wikipedia</string>
+    <string name="online_loading">Cargando información en línea…</string>
+    <string name="online_empty">No encontramos información en línea para este ejercicio.</string>
+    <string name="online_error_offline">Sin conexión. Revisá tu red y volvé a intentar.</string>
+    <string name="online_error_rate_limited">Wikipedia recibió demasiadas solicitudes. Probá de nuevo en un rato.</string>
+    <string name="online_error_server">No pudimos cargar la información en línea. Probá de nuevo.</string>
+    <string name="online_cached_note">Sin conexión: mostrando la copia guardada el %1$s.</string>
+    <string name="online_text_credit">Texto: «%1$s», colaboradores de Wikipedia, CC BY-SA 4.0 (extracto).</string>
+    <string name="online_photo_credit">Foto: %1$s · %2$s, vía Wikimedia Commons.</string>
+    <string name="online_photo_credit_unknown">Foto vía Wikimedia Commons (ver autor y licencia).</string>
+    <string name="online_photo_desc">Foto del ejercicio publicada en Wikimedia Commons</string>
+    <string name="action_retry">Reintentar</string>
+    <string name="action_read_article">Leer el artículo completo</string>
+    <string name="action_photo_license">Ver autor y licencia de la foto</string>
+    <string name="error_no_browser">No hay una app para abrir enlaces.</string>
 </resources>
