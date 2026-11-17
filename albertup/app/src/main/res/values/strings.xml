@@ -80,4 +80,24 @@
     <string name="confirm_delete_message">%1$s · %2$s. Vas a poder deshacerlo justo después.</string>
     <string name="discard_title">¿Descartar los cambios?</string>
     <string name="discard_message">La serie va a quedar como estaba.</string>
+
+    <!-- History -->
+    <string name="format_pair" translatable="false">%1$s · %2$s</string>
+    <string name="action_log">Registrar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_undo">Deshacer</string>
+    <string name="history_title">Historial</string>
+    <string name="history_filter_all">Todos</string>
+    <string name="history_total_summary">Total: %1$s · %2$s</string>
+    <string name="history_edit_desc">Editar %1$s de las %2$s</string>
+    <string name="history_delete_desc">Eliminar %1$s de las %2$s</string>
+    <string name="history_empty_title">Todavía no registraste series</string>
+    <string name="history_empty_message">Cuando registres una serie la vas a ver acá, agrupada por día.</string>
+    <string name="history_empty_filtered_title">Sin series de este ejercicio</string>
+    <string name="history_empty_filtered_message">Probá con otro filtro o registrá una serie nueva.</string>
+    <string name="history_log_first">Registrar una serie</string>
+    <string name="feedback_set_created">Serie guardada: %1$s</string>
+    <string name="feedback_new_record">¡Nuevo récord personal! %1$s</string>
+    <string name="feedback_set_updated">Serie actualizada: %1$s</string>
+    <string name="feedback_set_deleted">Serie eliminada: %1$s</string>
 </resources>

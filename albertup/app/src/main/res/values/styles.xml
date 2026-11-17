@@ -88,6 +88,18 @@
         <item name="android:minHeight">@dimen/touch_target</item>
     </style>
 
+    <style name="Widget.AlberTUP.Button.IconPlain" parent="Widget.Material3.Button.IconButton">
+        <item name="android:minWidth">@dimen/touch_target</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="iconTint">@color/text_secondary</item>
+    </style>
+
+    <style name="Widget.AlberTUP.Fab" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
+        <item name="backgroundTint">@color/accent_volt</item>
+        <item name="android:textColor">@color/on_accent_volt</item>
+        <item name="iconTint">@color/on_accent_volt</item>
+    </style>
+
     <!-- Toolbar -->
     <style name="Widget.AlberTUP.Toolbar" parent="Widget.Material3.Toolbar">
         <item name="android:background">@color/background</item>

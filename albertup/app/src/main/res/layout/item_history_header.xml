@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/spacing_large"
+    android:paddingBottom="@dimen/spacing_small">
+
+    <TextView
+        android:id="@+id/tvDay"
+        style="@style/Widget.AlberTUP.Text.SectionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Hoy" />
+
+    <TextView
+        android:id="@+id/tvDaySummary"
+        style="@style/Widget.AlberTUP.Text.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="3 series · 45 reps" />
+
+</LinearLayout>

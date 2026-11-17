@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".LogWorkoutActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
