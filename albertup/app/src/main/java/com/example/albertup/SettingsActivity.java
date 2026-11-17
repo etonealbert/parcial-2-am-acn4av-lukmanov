@@ -14,10 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.os.LocaleListCompat;
 
+import com.example.albertup.cloud.CloudBackup;
 import com.example.albertup.data.AppSettings;
 import com.example.albertup.ui.Formats;
 import com.example.albertup.ui.SystemBars;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Locale;
 
@@ -35,6 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
     private TextView tvGoalValue;
     private Button btnGoalMinus;
     private Button btnGoalPlus;
+    private TextView tvAccountStatus;
 
     @NonNull
     public static Intent newIntent(@NonNull Context context) {
@@ -68,6 +72,31 @@ public class SettingsActivity extends AppCompatActivity {
         btnGoalMinus.setOnClickListener(v -> changeGoal(-AppSettings.DAILY_GOAL_STEP));
         btnGoalPlus.setOnClickListener(v -> changeGoal(AppSettings.DAILY_GOAL_STEP));
         renderGoal(settings.getDailyGoal());
+
+        tvAccountStatus = findViewById(R.id.tvAccountStatus);
+        findViewById(R.id.btnOpenAccount).setOnClickListener(v ->
+                startActivity(AccountActivity.newIntent(this)));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        renderAccountStatus();
+    }
+
+    private void renderAccountStatus() {
+        if (!CloudBackup.isConfigured(this)) {
+            tvAccountStatus.setText(R.string.settings_account_not_configured);
+            return;
+        }
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            tvAccountStatus.setText(R.string.settings_account_signed_out);
+        } else {
+            String email = user.getEmail();
+            tvAccountStatus.setText(getString(R.string.settings_account_signed_in,
+                    email != null ? email : user.getUid()));
+        }
     }
 
     /** Language code chosen in the app, or "" when it follows the device. */

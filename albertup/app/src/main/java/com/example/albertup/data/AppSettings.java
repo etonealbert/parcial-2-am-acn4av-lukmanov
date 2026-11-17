@@ -17,6 +17,8 @@ public final class AppSettings {
     private static final String PREFS_NAME = "albertup_settings";
     private static final String KEY_DAILY_GOAL = "daily_goal";
     private static final String KEY_NIGHT_MODE = "night_mode";
+    private static final String KEY_LAST_BACKUP_AT = "last_backup_at_";
+    private static final String KEY_LAST_BACKUP_COUNT = "last_backup_count_";
 
     private final SharedPreferences prefs;
 
@@ -44,6 +46,22 @@ public final class AppSettings {
 
     public void setNightMode(int mode) {
         prefs.edit().putInt(KEY_NIGHT_MODE, mode).apply();
+    }
+
+    /** Epoch millis of the last successful cloud backup for this user, or 0. */
+    public long getLastBackupAt(@NonNull String uid) {
+        return prefs.getLong(KEY_LAST_BACKUP_AT + uid, 0L);
+    }
+
+    public int getLastBackupCount(@NonNull String uid) {
+        return prefs.getInt(KEY_LAST_BACKUP_COUNT + uid, 0);
+    }
+
+    public void setLastBackup(@NonNull String uid, long backedUpAt, int setCount) {
+        prefs.edit()
+                .putLong(KEY_LAST_BACKUP_AT + uid, backedUpAt)
+                .putInt(KEY_LAST_BACKUP_COUNT + uid, setCount)
+                .apply();
     }
 
     public static int clampGoal(int goal) {

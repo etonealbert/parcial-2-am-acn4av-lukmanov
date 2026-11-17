@@ -1,0 +1,29 @@
+rules_version = '2';
+
+// AlberTUP: each user can only read and write their own documents.
+// Paste these rules in Firebase console > Firestore Database > Rules and publish them.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    // Backup summary: lastBackupAt, setCount.
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      // One document per logged set; the document id is the set UUID.
+      match /sets/{setId} {
+        allow read, delete: if isOwner(userId);
+        allow create, update: if isOwner(userId)
+          && request.resource.data.exerciseId in ['push_up', 'pull_up']
+          && request.resource.data.reps is int
+          && request.resource.data.reps >= 1
+          && request.resource.data.reps <= 200
+          && request.resource.data.performedAt is timestamp
+          && request.resource.data.updatedAt is timestamp;
+      }
+    }
+  }
+}

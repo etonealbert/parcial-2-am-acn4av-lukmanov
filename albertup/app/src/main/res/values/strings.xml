@@ -150,4 +150,44 @@
     <string name="action_read_article">Leer el artículo completo</string>
     <string name="action_photo_license">Ver autor y licencia de la foto</string>
     <string name="error_no_browser">No hay una app para abrir enlaces.</string>
+
+    <!-- Account and cloud backup (Firebase) -->
+    <string name="settings_account">Cuenta y respaldo en la nube</string>
+    <string name="settings_account_not_configured">Firebase no está configurado en esta compilación.</string>
+    <string name="settings_account_signed_out">Sin sesión iniciada.</string>
+    <string name="settings_account_signed_in">Sesión iniciada: %1$s</string>
+    <string name="action_manage_account">Gestionar cuenta</string>
+    <string name="account_title">Cuenta y nube</string>
+    <string name="account_intro">Opcional: creá una cuenta para respaldar tus series en la nube con Firebase. La app funciona igual sin cuenta.</string>
+    <string name="account_not_configured_title">Firebase todavía no está configurado</string>
+    <string name="account_not_configured_message">Esta compilación no incluye el archivo google-services.json, así que el inicio de sesión y el respaldo están desactivados. Los pasos para activarlo están en docs/FIREBASE.md del repositorio.</string>
+    <string name="account_email_hint">Email</string>
+    <string name="account_password_hint">Contraseña</string>
+    <string name="account_sign_in">Iniciar sesión</string>
+    <string name="account_create">Crear cuenta</string>
+    <string name="account_signed_in_as">Sesión iniciada: %1$s</string>
+    <string name="account_last_backup">Último respaldo: %1$s (%2$s)</string>
+    <string name="account_no_backup">Todavía no hiciste ningún respaldo.</string>
+    <string name="account_backup">Respaldar mis series ahora</string>
+    <string name="account_sign_out">Cerrar sesión</string>
+    <string name="account_privacy_note">Solo se suben tus series (ejercicio, repeticiones y fecha) a tu espacio privado en Firestore, protegido por reglas de seguridad.</string>
+    <string name="account_error_email">Ingresá un email válido.</string>
+    <string name="account_error_password_length">La contraseña debe tener al menos %1$d caracteres.</string>
+    <string name="account_error_credentials">Email o contraseña incorrectos.</string>
+    <string name="account_error_email_in_use">Ya existe una cuenta con ese email. Iniciá sesión.</string>
+    <string name="account_error_weak_password">La contraseña es demasiado débil. Probá con una más larga.</string>
+    <string name="account_error_network">Sin conexión. Revisá tu red y volvé a intentar.</string>
+    <string name="account_error_too_many">Demasiados intentos. Esperá unos minutos.</string>
+    <string name="account_error_generic">No se pudo completar la operación. Probá de nuevo.</string>
+    <string name="account_progress_signing_in">Iniciando sesión…</string>
+    <string name="account_progress_creating">Creando la cuenta…</string>
+    <string name="account_progress_backup">Respaldando tus series…</string>
+    <string name="account_signed_in">¡Listo! Ya podés respaldar tus series.</string>
+    <string name="account_created">Cuenta creada. Ya podés respaldar tus series.</string>
+    <string name="account_signed_out">Cerraste la sesión. Tus series siguen en este dispositivo.</string>
+    <string name="account_backup_empty">Todavía no hay series para respaldar.</string>
+    <string name="account_backup_done">Respaldo completo: %1$s en la nube.</string>
+    <string name="account_backup_failed">No se pudo completar el respaldo. Probá de nuevo.</string>
+    <string name="account_backup_denied">Firestore rechazó el respaldo: revisá las reglas de seguridad (docs/FIREBASE.md).</string>
+    <string name="account_backup_pending">Sin respuesta del servidor: el respaldo quedó pendiente y se enviará cuando haya conexión.</string>
 </resources>

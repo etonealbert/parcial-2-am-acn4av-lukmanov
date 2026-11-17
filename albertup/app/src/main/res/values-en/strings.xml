@@ -141,4 +141,44 @@
     <string name="action_read_article">Read the full article</string>
     <string name="action_photo_license">See photo author and license</string>
     <string name="error_no_browser">No app available to open links.</string>
+
+    <!-- Account and cloud backup (Firebase) -->
+    <string name="settings_account">Account and cloud backup</string>
+    <string name="settings_account_not_configured">Firebase is not configured in this build.</string>
+    <string name="settings_account_signed_out">Not signed in.</string>
+    <string name="settings_account_signed_in">Signed in: %1$s</string>
+    <string name="action_manage_account">Manage account</string>
+    <string name="account_title">Account and cloud</string>
+    <string name="account_intro">Optional: create an account to back up your sets to the cloud with Firebase. The app works the same without an account.</string>
+    <string name="account_not_configured_title">Firebase is not configured yet</string>
+    <string name="account_not_configured_message">This build does not include the google-services.json file, so sign-in and backup are disabled. The steps to enable them are in docs/FIREBASE.md in the repository.</string>
+    <string name="account_email_hint">Email</string>
+    <string name="account_password_hint">Password</string>
+    <string name="account_sign_in">Sign in</string>
+    <string name="account_create">Create account</string>
+    <string name="account_signed_in_as">Signed in: %1$s</string>
+    <string name="account_last_backup">Last backup: %1$s (%2$s)</string>
+    <string name="account_no_backup">You have not backed up yet.</string>
+    <string name="account_backup">Back up my sets now</string>
+    <string name="account_sign_out">Sign out</string>
+    <string name="account_privacy_note">Only your sets (exercise, reps and date) are uploaded to your private space in Firestore, protected by security rules.</string>
+    <string name="account_error_email">Enter a valid email.</string>
+    <string name="account_error_password_length">The password must have at least %1$d characters.</string>
+    <string name="account_error_credentials">Wrong email or password.</string>
+    <string name="account_error_email_in_use">An account with that email already exists. Sign in instead.</string>
+    <string name="account_error_weak_password">The password is too weak. Try a longer one.</string>
+    <string name="account_error_network">You\'re offline. Check your connection and try again.</string>
+    <string name="account_error_too_many">Too many attempts. Wait a few minutes.</string>
+    <string name="account_error_generic">The operation could not be completed. Try again.</string>
+    <string name="account_progress_signing_in">Signing in…</string>
+    <string name="account_progress_creating">Creating the account…</string>
+    <string name="account_progress_backup">Backing up your sets…</string>
+    <string name="account_signed_in">Done! You can now back up your sets.</string>
+    <string name="account_created">Account created. You can now back up your sets.</string>
+    <string name="account_signed_out">You signed out. Your sets are still on this device.</string>
+    <string name="account_backup_empty">There are no sets to back up yet.</string>
+    <string name="account_backup_done">Backup complete: %1$s in the cloud.</string>
+    <string name="account_backup_failed">The backup could not be completed. Try again.</string>
+    <string name="account_backup_denied">Firestore rejected the backup: check the security rules (docs/FIREBASE.md).</string>
+    <string name="account_backup_pending">No response from the server: the backup is pending and will be sent when you are back online.</string>
 </resources>

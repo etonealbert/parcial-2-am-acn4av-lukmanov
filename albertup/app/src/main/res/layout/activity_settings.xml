@@ -223,6 +223,49 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Account and cloud backup (Firebase) -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.AlberTUP.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Widget.AlberTUP.Text.SectionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/spacing_small"
+                        android:gravity="center_vertical"
+                        android:text="@string/settings_account"
+                        app:drawableStartCompat="@drawable/ic_cloud_upload"
+                        app:drawableTint="@color/accent_volt" />
+
+                    <TextView
+                        android:id="@+id/tvAccountStatus"
+                        style="@style/Widget.AlberTUP.Text.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xsmall"
+                        tools:text="Firebase no está configurado en esta compilación." />
+
+                    <Button
+                        android:id="@+id/btnOpenAccount"
+                        style="@style/Widget.AlberTUP.Button.Tonal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:text="@string/action_manage_account"
+                        app:icon="@drawable/ic_person" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
             <!-- Data and credits -->
             <TextView
                 style="@style/Widget.AlberTUP.Text.SectionTitle"
