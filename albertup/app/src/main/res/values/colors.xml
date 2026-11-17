@@ -2,12 +2,45 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Surfaces -->
     <color name="background">#FFF6F7F3</color>
     <color name="surface_card">#FFFFFFFF</color>
+    <color name="surface_container_lowest">#FFFFFFFF</color>
+    <color name="surface_container_low">#FFF1F3EC</color>
+    <color name="surface_container">#FFECEEE6</color>
+    <color name="surface_container_high">#FFE6E9E0</color>
+    <color name="surface_container_highest">#FFE1E4DA</color>
+    <color name="surface_inverse">#FF2F312A</color>
+    <color name="on_surface_inverse">#FFF1F2E9</color>
+
+    <!-- Text -->
     <color name="text_primary">#FF1A1C14</color>
     <color name="text_secondary">#FF5A5E55</color>
-    <color name="accent_volt">#FF558A00</color>
+
+    <!-- Brand "volt" accent. Light value darkened so white text keeps a 4.5:1+ contrast. -->
+    <color name="accent_volt">#FF4C7D00</color>
+    <color name="accent_volt_inverse">#FFB5E55E</color>
     <color name="on_accent_volt">#FFFFFFFF</color>
     <color name="accent_container">#FFEAF5C8</color>
+
+    <!-- Lines -->
     <color name="divider">#FFE2E5DE</color>
+    <color name="outline">#FF75796F</color>
+
+    <!-- Feedback -->
+    <color name="error">#FFBA1A1A</color>
+    <color name="on_error">#FFFFFFFF</color>
+    <color name="error_container">#FFFFDAD6</color>
+    <color name="on_error_container">#FF410002</color>
+
+    <!-- Illustrations -->
+    <color name="illustration_figure">#FF1A1C14</color>
+    <color name="illustration_accent">#FF4C7D00</color>
+    <color name="illustration_backdrop">#FFEAF5C8</color>
+    <color name="illustration_ground">#FFB9BEB0</color>
+
+    <!-- Launcher icon (not theme dependent) -->
+    <color name="launcher_background">#FFC6F135</color>
+    <color name="launcher_foreground">#FF1A1C14</color>
 </resources>
