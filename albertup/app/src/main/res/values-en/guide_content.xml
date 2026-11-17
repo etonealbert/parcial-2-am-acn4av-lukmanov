@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Push-ups -->
+    <string name="guide_push_up_summary">A bodyweight pushing exercise: you lower your chest towards the floor by bending your elbows and push back up with your body straight like a plank. It needs no equipment and scales to any level.</string>
+    <string-array name="guide_push_up_muscles">
+        <item>Pectoralis major</item>
+        <item>Triceps brachii</item>
+        <item>Anterior deltoid</item>
+        <item>Serratus anterior</item>
+        <item>Core (stabilizers)</item>
+    </string-array>
+    <string-array name="guide_push_up_steps">
+        <item>Place your hands on the floor slightly wider than shoulder-width, fingers pointing forward.</item>
+        <item>Extend your legs and rest on your toes: head, hips and heels form a straight line.</item>
+        <item>Brace your abs and glutes so your hips neither sag nor pike up.</item>
+        <item>Lower yourself under control, elbows at about 45° from your torso, until your chest is close to the floor.</item>
+        <item>Push the floor away to straighten your arms again, breathing out during the effort.</item>
+    </string-array>
+    <string-array name="guide_push_up_mistakes">
+        <item>Letting the hips sag or arching the lower back.</item>
+        <item>Flaring the elbows out to 90°, which overloads the shoulders.</item>
+        <item>Doing half reps without going low enough.</item>
+        <item>Leading with the head instead of keeping a neutral neck.</item>
+    </string-array>
+    <string-array name="guide_push_up_progressions">
+        <item>Level 1 · Wall push-ups</item>
+        <item>Level 2 · Incline push-ups, hands on a bench or a table</item>
+        <item>Level 3 · Knee push-ups</item>
+        <item>Level 4 · Full push-ups</item>
+        <item>Level 5 · Diamond or feet-elevated push-ups</item>
+    </string-array>
+
+    <!-- Pull-ups -->
+    <string name="guide_pull_up_summary">A pulling exercise on a fixed bar: hanging with an overhand grip (palms facing away), you pull your body up until your chin clears the bar. It is one of the most complete bodyweight exercises for the back and arms.</string>
+    <string-array name="guide_pull_up_muscles">
+        <item>Latissimus dorsi</item>
+        <item>Biceps brachii</item>
+        <item>Brachialis and brachioradialis</item>
+        <item>Rhomboids and middle and lower trapezius</item>
+        <item>Teres major</item>
+        <item>Forearms (grip)</item>
+    </string-array>
+    <string-array name="guide_pull_up_steps">
+        <item>Grab the bar with your palms facing away, slightly wider than shoulder-width.</item>
+        <item>Hang with straight arms and active shoulders: draw them slightly down and back.</item>
+        <item>Brace your abs and glutes and keep your legs together to avoid swinging.</item>
+        <item>Pull by driving your elbows towards your ribs until your chin clears the bar.</item>
+        <item>Lower yourself under control until your arms are fully straight before the next rep.</item>
+    </string-array>
+    <string-array name="guide_pull_up_mistakes">
+        <item>Swinging or kicking for momentum without control.</item>
+        <item>Doing half reps without straightening the arms at the bottom.</item>
+        <item>Craning the neck towards the bar instead of lifting the body.</item>
+        <item>Dropping fast on the way down, which strains shoulders and elbows.</item>
+    </string-array>
+    <string-array name="guide_pull_up_progressions">
+        <item>Level 1 · Dead hang for 20 to 30 seconds</item>
+        <item>Level 2 · Scapular pulls while hanging</item>
+        <item>Level 3 · Inverted rows (Australian pull-ups)</item>
+        <item>Level 4 · Negatives: get up with help and lower in 3 to 5 seconds</item>
+        <item>Level 5 · Band-assisted pull-ups</item>
+        <item>Level 6 · Full pull-ups</item>
+    </string-array>
+</resources>

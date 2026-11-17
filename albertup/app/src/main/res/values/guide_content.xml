@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
+    <!-- Push-ups -->
+    <string name="guide_push_up_summary">Ejercicio de empuje con el peso del propio cuerpo: bajás el pecho hacia el suelo flexionando los codos y volvés a subir con el cuerpo recto como una tabla. No necesita equipamiento y se adapta a cualquier nivel.</string>
+    <string-array name="guide_push_up_muscles">
+        <item>Pectoral mayor</item>
+        <item>Tríceps braquial</item>
+        <item>Deltoides anterior</item>
+        <item>Serrato anterior</item>
+        <item>Abdominales (estabilizan)</item>
+    </string-array>
+    <string-array name="guide_push_up_steps">
+        <item>Apoyá las manos en el suelo, un poco más abiertas que el ancho de los hombros, con los dedos hacia adelante.</item>
+        <item>Extendé las piernas y apoyate en las puntas de los pies: cabeza, cadera y talones forman una línea recta.</item>
+        <item>Apretá abdominales y glúteos para que la cadera no se hunda ni se eleve.</item>
+        <item>Bajá de forma controlada, con los codos a unos 45° del torso, hasta que el pecho quede cerca del suelo.</item>
+        <item>Empujá el suelo para volver a extender los brazos, exhalando durante el esfuerzo.</item>
+    </string-array>
+    <string-array name="guide_push_up_mistakes">
+        <item>Dejar caer la cadera o arquear la zona lumbar.</item>
+        <item>Abrir los codos a 90° del cuerpo, lo que sobrecarga los hombros.</item>
+        <item>Hacer medias repeticiones sin bajar lo suficiente.</item>
+        <item>Adelantar la cabeza en lugar de mantener el cuello neutro.</item>
+    </string-array>
+    <string-array name="guide_push_up_progressions">
+        <item>Nivel 1 · Flexiones contra la pared</item>
+        <item>Nivel 2 · Flexiones inclinadas, con las manos en un banco o una mesa</item>
+        <item>Nivel 3 · Flexiones con las rodillas apoyadas</item>
+        <item>Nivel 4 · Flexiones completas</item>
+        <item>Nivel 5 · Flexiones diamante o con los pies elevados</item>
+    </string-array>
+
+    <!-- Pull-ups -->
+    <string name="guide_pull_up_summary">Ejercicio de tracción en barra fija: colgado con agarre prono (palmas hacia adelante), elevás el cuerpo hasta que el mentón supera la barra. Es uno de los ejercicios con peso corporal más completos para la espalda y los brazos.</string>
+    <string-array name="guide_pull_up_muscles">
+        <item>Dorsal ancho</item>
+        <item>Bíceps braquial</item>
+        <item>Braquial y braquiorradial</item>
+        <item>Romboides y trapecio medio e inferior</item>
+        <item>Redondo mayor</item>
+        <item>Antebrazos (agarre)</item>
+    </string-array>
+    <string-array name="guide_pull_up_steps">
+        <item>Agarrá la barra con las palmas hacia adelante, un poco más abiertas que el ancho de los hombros.</item>
+        <item>Colgate con los brazos extendidos y los hombros activos: llevalos levemente hacia abajo y atrás.</item>
+        <item>Apretá abdominales y glúteos y juntá las piernas para no balancearte.</item>
+        <item>Tirá llevando los codos hacia las costillas hasta que el mentón pase la barra.</item>
+        <item>Bajá de forma controlada hasta extender por completo los brazos antes de la siguiente repetición.</item>
+    </string-array>
+    <string-array name="guide_pull_up_mistakes">
+        <item>Balancearse o patear para tomar impulso sin control.</item>
+        <item>Hacer medias repeticiones sin extender los brazos abajo.</item>
+        <item>Estirar el cuello hacia la barra en lugar de subir el cuerpo.</item>
+        <item>Soltarse de golpe al bajar, lo que castiga hombros y codos.</item>
+    </string-array>
+    <string-array name="guide_pull_up_progressions">
+        <item>Nivel 1 · Colgarse de la barra (dead hang) de 20 a 30 segundos</item>
+        <item>Nivel 2 · Retracciones escapulares colgado</item>
+        <item>Nivel 3 · Remo invertido (dominada australiana)</item>
+        <item>Nivel 4 · Negativas: subir con ayuda y bajar en 3 a 5 segundos</item>
+        <item>Nivel 5 · Dominadas asistidas con banda elástica</item>
+        <item>Nivel 6 · Dominadas completas</item>
+    </string-array>
+</resources>

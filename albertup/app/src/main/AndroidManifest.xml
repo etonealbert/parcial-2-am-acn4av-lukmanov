@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ExerciseGuideActivity"
+            android:exported="false" />
+        <activity
             android:name=".HistoryActivity"
             android:exported="false" />
         <activity

@@ -100,4 +100,20 @@
     <string name="feedback_new_record">¡Nuevo récord personal! %1$s</string>
     <string name="feedback_set_updated">Serie actualizada: %1$s</string>
     <string name="feedback_set_deleted">Serie eliminada: %1$s</string>
+
+    <!-- Exercise guide -->
+    <string name="guide_illustration_desc">Ilustración de una persona haciendo el ejercicio</string>
+    <string name="guide_section_stats">Tus números</string>
+    <string name="guide_stat_record">Récord (reps)</string>
+    <string name="guide_stat_total">Reps totales</string>
+    <string name="guide_stat_sets">Series</string>
+    <string name="guide_history_button">Ver mi historial de este ejercicio</string>
+    <string name="guide_section_muscles">Músculos que trabaja</string>
+    <string name="guide_section_steps">Técnica paso a paso</string>
+    <string name="guide_section_mistakes">Errores comunes</string>
+    <string name="guide_section_progressions">Progresiones</string>
+    <string name="guide_progressions_hint">Empezá por el nivel en el que puedas hacer 3 series de 8 a 12 repeticiones con buena técnica.</string>
+    <string name="guide_safety">Si sentís dolor en las articulaciones, frená. Ante lesiones previas, consultá a un profesional de la salud.</string>
+    <string name="guide_log_button">Registrar una serie</string>
+    <string name="error_exercise_not_found">No se encontró el ejercicio solicitado.</string>
 </resources>

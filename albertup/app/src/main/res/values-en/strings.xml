@@ -94,4 +94,20 @@
     <string name="feedback_new_record">New personal record! %1$s</string>
     <string name="feedback_set_updated">Set updated: %1$s</string>
     <string name="feedback_set_deleted">Set deleted: %1$s</string>
+
+    <!-- Exercise guide -->
+    <string name="guide_illustration_desc">Illustration of a person doing the exercise</string>
+    <string name="guide_section_stats">Your numbers</string>
+    <string name="guide_stat_record">Record (reps)</string>
+    <string name="guide_stat_total">Total reps</string>
+    <string name="guide_stat_sets">Sets</string>
+    <string name="guide_history_button">See my history for this exercise</string>
+    <string name="guide_section_muscles">Muscles worked</string>
+    <string name="guide_section_steps">Step-by-step technique</string>
+    <string name="guide_section_mistakes">Common mistakes</string>
+    <string name="guide_section_progressions">Progressions</string>
+    <string name="guide_progressions_hint">Start at the level where you can do 3 sets of 8 to 12 reps with good form.</string>
+    <string name="guide_safety">Stop if you feel joint pain. If you have a previous injury, check with a health professional.</string>
+    <string name="guide_log_button">Log a set</string>
+    <string name="error_exercise_not_found">The requested exercise was not found.</string>
 </resources>

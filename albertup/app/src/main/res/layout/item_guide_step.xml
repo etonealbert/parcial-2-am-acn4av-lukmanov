@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_medium"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvStepNumber"
+        style="@style/Widget.AlberTUP.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_step_number"
+        android:gravity="center"
+        android:minWidth="@dimen/step_number_size"
+        android:minHeight="@dimen/step_number_size"
+        android:textStyle="bold"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/tvStepText"
+        style="@style/Widget.AlberTUP.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_weight="1"
+        tools:text="Apoyá las manos en el suelo, un poco más abiertas que el ancho de los hombros." />
+
+</LinearLayout>
