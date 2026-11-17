@@ -108,4 +108,24 @@
     <string name="guide_safety">Si sentís dolor en las articulaciones, frená. Ante lesiones previas, consultá a un profesional de la salud.</string>
     <string name="guide_log_button">Registrar una serie</string>
     <string name="error_exercise_not_found">No se encontró el ejercicio solicitado.</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_hint">«Predeterminado del sistema» usa el idioma del dispositivo.</string>
+    <string name="language_system">Predeterminado del sistema</string>
+    <string name="language_es" translatable="false">Español</string>
+    <string name="language_en" translatable="false">English</string>
+    <string name="settings_theme">Tema</string>
+    <string name="theme_system">Según el sistema</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="settings_goal">Meta diaria</string>
+    <string name="settings_goal_hint">Repeticiones que querés sumar cada día entre flexiones y dominadas.</string>
+    <string name="goal_decrease_desc">Bajar la meta diaria</string>
+    <string name="goal_increase_desc">Subir la meta diaria</string>
+    <string name="settings_data">Tus datos</string>
+    <string name="settings_data_hint">Las series se guardan en una base de datos local (SQLite) en este dispositivo, con fecha y hora, para calcular tus totales y récords.</string>
+    <string name="settings_credits">Créditos</string>
+    <string name="settings_credits_text">Íconos: Material Icons de Google (licencia Apache 2.0). Ilustraciones y logo: creados para AlberTUP.</string>
 </resources>

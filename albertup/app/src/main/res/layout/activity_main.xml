@@ -74,6 +74,15 @@
                     app:icon="@drawable/ic_history"
                     app:iconTint="@color/text_primary" />
 
+                <Button
+                    android:id="@+id/btnSettings"
+                    style="@style/Widget.AlberTUP.Button.IconPlain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/settings_title"
+                    app:icon="@drawable/ic_settings"
+                    app:iconTint="@color/text_primary" />
+
             </LinearLayout>
 
             <TextView

@@ -157,6 +157,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(HistoryActivity.newIntent(this, null));
         findViewById(R.id.btnHistory).setOnClickListener(openHistory);
         findViewById(R.id.btnViewHistory).setOnClickListener(openHistory);
+        findViewById(R.id.btnSettings).setOnClickListener(v ->
+                startActivity(SettingsActivity.newIntent(this)));
     }
 
     private void openLog(@Nullable Exercise preselected) {

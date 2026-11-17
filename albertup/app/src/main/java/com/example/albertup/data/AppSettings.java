@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 
 /** Small user preferences stored in SharedPreferences. */
 public final class AppSettings {
@@ -15,6 +16,7 @@ public final class AppSettings {
 
     private static final String PREFS_NAME = "albertup_settings";
     private static final String KEY_DAILY_GOAL = "daily_goal";
+    private static final String KEY_NIGHT_MODE = "night_mode";
 
     private final SharedPreferences prefs;
 
@@ -29,6 +31,19 @@ public final class AppSettings {
 
     public void setDailyGoal(int goal) {
         prefs.edit().putInt(KEY_DAILY_GOAL, clampGoal(goal)).apply();
+    }
+
+    /** One of AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM, MODE_NIGHT_NO or MODE_NIGHT_YES. */
+    public int getNightMode() {
+        int mode = prefs.getInt(KEY_NIGHT_MODE, AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        if (mode == AppCompatDelegate.MODE_NIGHT_NO || mode == AppCompatDelegate.MODE_NIGHT_YES) {
+            return mode;
+        }
+        return AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+    }
+
+    public void setNightMode(int mode) {
+        prefs.edit().putInt(KEY_NIGHT_MODE, mode).apply();
     }
 
     public static int clampGoal(int goal) {
